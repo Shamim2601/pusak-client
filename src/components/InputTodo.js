@@ -28,17 +28,17 @@ const InputTodo = () => {
     return (
         <Fragment>
             <div className="container mt-5">
-                <h1 className="text-center mt-5">Todo List</h1>
+                <h1 className="text-center mt-5">Event List</h1>
                 <form className="d-flex mt-4" onSubmit={onSubmitForm}>
                     <input
                         type="text"
                         className="form-control me-2"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        placeholder="Enter a todo"
+                        placeholder="Enter an event"
                     />
                     <button type="submit" className="btn btn-success">
-                        Add Todo
+                        Add Event
                     </button>
                 </form>
             </div>
