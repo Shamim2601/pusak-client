@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import config from '../config'; // Import the configuration file
+import config from '../../config'; // Import the configuration file
 
 const InputTodo = () => {
     const [description, setDescription] = useState("");
