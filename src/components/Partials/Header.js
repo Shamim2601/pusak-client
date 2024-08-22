@@ -3,8 +3,7 @@ import React from 'react';
 function Header() {
   return (
     <header style={headerStyle}>
-      <h1>Public University Students Association of Kalihati</h1>
-      {/* You can add navigation links or a logo here */}
+      <h4>Public University Students Association of Kalihati</h4>
     </header>
   );
 }
