@@ -71,7 +71,7 @@ function AddMemberForm() {
           <input type="number" className="form-control" id="hsc_batch" name="hsc_batch" placeholder='2018' value={formData.hsc_batch} onChange={handleChange} />
         </div>
         <div className="mb-3">
-          <label htmlFor="union_pourasava" className="form-label">Select Union/Pourasava:</label>
+          <label htmlFor="union_pourasava" className="form-label">Union/Pourasava:</label>
           <select
             className="form-control"
             id="union_pourasava"
@@ -80,6 +80,7 @@ function AddMemberForm() {
             onChange={handleChange}
             required
           >
+            <option value="">Select...</option>
             <option value="Durgapur">1. Durgapur</option>
             <option value="Gohaliabari">2. Gohaliabari</option>
             <option value="Salla">3. Salla</option>
