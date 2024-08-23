@@ -27,7 +27,7 @@ function AddMemberForm() {
     e.preventDefault();
     try {
       await axios.post('https://pusak-server.vercel.app/members', formData);
-      alert('Member added successfully');
+      alert('Success! Click on Header to go to Homepage.');
       setFormData({
         name: '',
         university: '',
@@ -108,7 +108,7 @@ function AddMemberForm() {
         </div>
         <div className="mb-3">
           <label htmlFor="fb_profile" className="form-label">Facebook Profile Link:</label>
-          <input type="text" className="form-control" id="fb_profile" name="fb_profile" value={formData.fb_profile} onChange={handleChange} />
+          <input type="text" className="form-control" id="fb_profile" name="fb_profile" placeholder='https://www.facebook.com/abc34546' value={formData.fb_profile} onChange={handleChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="blood_group" className="form-label">Select Blood Group:</label>

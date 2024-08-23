@@ -6,7 +6,9 @@ import Header from "./components/Partials/Header";
 import Footer from "./components/Partials/Footer";
 import InputTodo from "./components/Events/InputTodo";
 import ListTodos from "./components/Events/ListTodos";
-import AddMemberForm from "./components/Members/AddMemberForm"; // Import the AddMemberForm component
+import AddMemberForm from "./components/Members/AddMemberForm";
+import AdminLogin from "./components/Admin/AdminLogin";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   return (
@@ -28,11 +30,19 @@ function App() {
             path="/add-member" 
             element={<AddMemberForm />} 
           />
+          <Route 
+            path="/admin-login" 
+            element={<AdminLogin />} 
+          />
+          <Route 
+            path="/admin-dashboard" 
+            element={<AdminDashboard />}
+          />
         </Routes>
       </div>
       <Footer />
     </BrowserRouter>
   );
-};
+}
 
 export default App;
