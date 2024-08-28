@@ -113,6 +113,7 @@ function AddMemberForm() {
         <div className="mb-3">
           <label htmlFor="blood_group" className="form-label">Select Blood Group:</label>
           <select className="form-control" id="blood_group" name="blood_group" value={formData.blood_group} onChange={handleChange} required>
+            <option value="">Select...</option>
             <option value="A+">A+</option>
             <option value="A-">A-</option>
             <option value="AB+">AB+</option>

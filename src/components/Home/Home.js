@@ -6,6 +6,7 @@ function Home() {
   const [filteredMembers, setFilteredMembers] = useState([]);
   const [bloodGroupFilter, setBloodGroupFilter] = useState('');
   const [unionFilter, setUnionFilter] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -22,7 +23,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    // Apply filters
+    // Apply filters and search
     const applyFilters = () => {
       let results = members;
 
@@ -34,11 +35,24 @@ function Home() {
         results = results.filter(member => member.union_pourasava === unionFilter);
       }
 
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        results = results.filter(
+          member =>
+            member.name.toLowerCase().includes(query) ||
+            member.university.toLowerCase().includes(query) ||
+            member.subject.toLowerCase().includes(query) ||
+            member.hall.toLowerCase().includes(query) ||
+            String(member.hsc_batch).toLowerCase().includes(query) || // Safely handle hsc_batch
+            member.phone.toLowerCase().includes(query)
+        );
+      }
+
       setFilteredMembers(results);
     };
 
     applyFilters();
-  }, [bloodGroupFilter, unionFilter, members]);
+  }, [bloodGroupFilter, unionFilter, searchQuery, members]);
 
   return (
     <div className="container my-5">
@@ -92,6 +106,18 @@ function Home() {
               <option value="Parkhi">Parkhi</option>
               <option value="Nagbari">Nagbari</option>
             </select>
+          </div>
+
+          <div className="col-md-4 mb-3">
+            <label htmlFor="searchQuery" className="form-label">Search:</label>
+            <input
+              type="text"
+              id="searchQuery"
+              className="form-control"
+              placeholder="Search by Name, University, Subject, etc."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
       </div>
